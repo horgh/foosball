@@ -1,0 +1,7 @@
+<h1>Leaderboard</h1>
+{% for i in teams %}
+#{{forloop.counter}}
+Team {{i.0}}
+Wins {{i.1}}
+<br>
+{% endfor %}
