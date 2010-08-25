@@ -1,0 +1,10 @@
+<h1>Games</h1>
+{% for game in games %}
+Game {{game.id}}
+<br>
+{% for score in game.score_set.all %}
+Team: {{score.team_id}} Score: {{score.score}}
+<br>
+{% endfor %}
+<br><br>
+{% endfor %}

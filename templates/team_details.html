@@ -1,0 +1,21 @@
+<h1>{{team.name}}</h1>
+
+<h3>Players</h3>
+<ul>
+	<li>{{team.player1.name}}</li>
+	<li>{{team.player2.name}}</li>
+</ul>
+
+<h3>Games played</h3>
+
+{# get score record for each game played by this team #}
+{% for score in team.score_set.all %}
+Game {{score.game_id}} <br>
+
+{# for each game played by this team, get both scores #}
+{% for scores in score.game.score_set.all %}
+Team: {{scores.team_id}} Score: {{scores.score}}
+<br>
+{% endfor %}
+<br><br>
+{% endfor %}

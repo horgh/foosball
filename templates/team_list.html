@@ -1,0 +1,10 @@
+{% if team_list %}
+<h1>Teams</h1>
+	<ul>
+	{% for team in team_list %}
+		<li><a href="/foos/teams/{{team.id}}/">{{team.name}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No teams found.</p>
+{% endif %}
